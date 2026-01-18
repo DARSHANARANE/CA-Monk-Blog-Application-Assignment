@@ -13,6 +13,7 @@
       The app consumes a mock REST API and displays blog-related data with proper loading and error handling.
 
 🛠 Tech Stack
+
       Category	Technology
       Framework	React (Vite)
       Language	TypeScript
