@@ -117,6 +117,39 @@
       "date": "2025-12-10T16:30:00.000Z",
       "coverImage": "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg",
       "content": "Ethics form the backbone of trust in financial systems. With increased automation and complex instruments, ethical judgment plays a crucial role in decision-making. Short-term gains achieved through unethical practices often lead to long-term damage.\n\nProfessionals must prioritize transparency, integrity, and accountability. Strong ethical frameworks protect not only clients but also the credibility of the profession.\n\nIn an era of rapid change, ethics remain a constant guiding principle."
+    },
+    {
+      "id": "2251",
+      "title": "testing",
+      "category": [
+        "TESING"
+      ],
+      "description": "testing",
+      "coverImage": "testing",
+      "content": "testing",
+      "date": "2026-01-17T07:58:14.094Z"
+    },
+    {
+      "id": "20e1",
+      "title": "Lorem Ipsum is simply dummy text",
+      "category": [
+        "LOREM IPSUM IS SIMPLY DUMMY TEXT"
+      ],
+      "description": "Dummy text (or filler text) is meaningless text used by designers and publishers as a placeholder to fill space in layouts, focusing attention on design, typography, and spacing rather than content; ",
+      "coverImage": "Lorem Ipsum is simply dummy text",
+      "content": "Dummy text (or filler text) is meaningless text used by designers and publishers as a placeholder to fill space in layouts, focusing attention on design, typography, and spacing rather than content; it looks like real text but serves as a temporary stand-in until final content is ready, with the most famous example being \"Lorem Ipsum\".Dummy text (or filler text) is meaningless text used by designers and publishers as a placeholder to fill space in layouts, focusing attention on design, typography, and spacing rather than content; it looks like real text but serves as a temporary stand-in until final content is ready, with the most famous example being \"Lorem Ipsum\".",
+      "date": "2026-01-17T17:28:55.388Z"
+    },
+    {
+      "id": "93e6",
+      "title": "final testing",
+      "category": [
+        "TECH"
+      ],
+      "description": "Dummy text (or filler text) is meaningless text used by designers and publishers as a placeholder to fill space in layouts, ",
+      "coverImage": "https://picsum.photos/200/300",
+      "content": "Dummy text (or filler text) is meaningless text used by designers and publishers as a placeholder to fill space in layouts, focusing attention on design, typography, and spacing rather than content; it looks like real text but serves as a temporary stand-in until final content is ready, with the most famous example being \"Lorem Ipsum\".",
+      "date": "2026-01-18T05:53:41.255Z"
     }
   ]
 }

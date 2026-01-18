@@ -1,35 +1,59 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import BlogList from "@/components/BlogList";
+import BlogDetail from "@/components/BlogDetail";
+import CreateBlogForm from "@/components/CreateBlogForm";
+import { useBlogs } from "@/hooks/useBlogs";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedBlogId, setSelectedBlogId] = useState<number | null>(null);
+  const { data: blogs } = useBlogs();
+
+  const isDesktop = window.innerWidth >= 768;
+
+  // ✅ Auto-select ONLY on desktop, ONLY once blogs are loaded
+  useEffect(() => {
+    if (isDesktop && blogs && blogs.length > 0 && selectedBlogId === null) {
+      setSelectedBlogId(blogs[0].id);
+    }
+  }, [blogs, isDesktop, selectedBlogId]);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="p-4 md:p-6">
+      {/* ================= Desktop Layout ================= */}
+      <div className="hidden md:grid grid-cols-3 gap-6">
+        <div className="col-span-1 space-y-4">
+          <CreateBlogForm />
+          <BlogList
+            onSelect={setSelectedBlogId}
+            selectedId={selectedBlogId}
+          />
+        </div>
+
+        <div className="col-span-2 border rounded-lg p-6">
+          <BlogDetail blogId={selectedBlogId} />
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+
+      {/* ================= Mobile Layout ================= */}
+      <div className="md:hidden">
+        {selectedBlogId === null ? (
+          <>
+            <CreateBlogForm />
+            <BlogList
+              onSelect={setSelectedBlogId}
+              selectedId={null}
+            />
+          </>
+        ) : (
+          <BlogDetail
+            blogId={selectedBlogId}
+            isMobile
+            onBack={() => setSelectedBlogId(null)}
+          />
+        )}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
